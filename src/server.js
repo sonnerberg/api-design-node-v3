@@ -17,9 +17,9 @@ app.use(json())
 app.use(urlencoded({ extended: true }))
 app.use(morgan('dev'))
 
-app.use(itemRouter)
-app.use(userRouter)
-app.use(listRouter)
+app.use('/api/item', itemRouter)
+app.use('/api/user', userRouter)
+app.use('/api/list', listRouter)
 
 export const start = async () => {
   try {
