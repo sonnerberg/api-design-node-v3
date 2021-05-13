@@ -2,15 +2,18 @@ import { Router } from 'express'
 
 const router = Router()
 
+const mockController = (req, res) => {
+  res.send('hello')
+}
 router
   .route('/')
-  .get(() => {})
-  .post(() => {})
+  .get(mockController)
+  .post(mockController)
 
 router
   .route('/:id')
-  .get(() => {})
-  .delete(() => {})
-  .put(() => {})
+  .get(mockController)
+  .delete(mockController)
+  .put(mockController)
 
 export default router
