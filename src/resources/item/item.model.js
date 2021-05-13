@@ -29,4 +29,7 @@ const itemSchema = new mongoose.Schema(
   },
   { timestamps: true }
 )
+
+itemSchema.index({ item: 1, name: 1 }, { unique: true })
+
 export const Item = mongoose.model('item', itemSchema)
