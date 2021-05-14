@@ -1,10 +1,10 @@
 export const getOne = model => async (req, res) => {
   const {
-    user: { _id: userId },
-    params: { id }
+    user: { _id: createdBy },
+    params: { id: _id }
   } = req
 
-  const result = await model.findOne({ _id: id, createdBy: userId })
+  const result = await model.findOne({ _id, createdBy })
 
   if (!result) {
     return res.status(404).end()
@@ -15,32 +15,32 @@ export const getOne = model => async (req, res) => {
 
 export const getMany = model => async (req, res) => {
   const {
-    user: { _id: userId }
+    user: { _id: createdBy }
   } = req
-  const result = await model.find({ createdBy: userId })
+  const result = await model.find({ createdBy })
 
   res.status(200).json({ data: result })
 }
 
 export const createOne = model => async (req, res) => {
   const {
-    user: { _id: userId },
+    user: { _id: createdBy },
     body: { name }
   } = req
 
-  const result = await model.create({ name, createdBy: userId })
+  const result = await model.create({ name, createdBy })
   res.status(201).json({ data: result })
 }
 
 export const updateOne = model => async (req, res) => {
   const {
-    user: { _id: userId },
-    params: { id },
+    user: { _id: createdBy },
+    params: { id: _id },
     body: { name }
   } = req
 
   const result = await model.findOneAndUpdate(
-    { _id: id, createdBy: userId },
+    { _id, createdBy },
     { name },
     { new: true }
   )
@@ -54,13 +54,13 @@ export const updateOne = model => async (req, res) => {
 
 export const removeOne = model => async (req, res) => {
   const {
-    params: { id },
-    user: { _id: userId }
+    params: { id: _id },
+    user: { _id: createdBy }
   } = req
 
   const result = await model.findOneAndRemove({
-    _id: id,
-    createdBy: userId
+    _id,
+    createdBy
   })
 
   if (!result) {
