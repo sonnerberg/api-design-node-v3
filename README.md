@@ -59,10 +59,10 @@ In this lesson you'll be creating a simple Express based API in node, just to ge
 
 This exercise will have you creating routes and sub routers for our soon the be DB resources using Express routing and routers
 
-- [x] create a router for the Item resource
-- [x] create full crud routes and create placeholder controllers
-- [x] mount router on the root server
-- [x] ensure all tests pass by running test command
+- [ ] create a router for the Item resource
+- [ ] create full crud routes and create placeholder controllers
+- [ ] mount router on the root server
+- [ ] ensure all tests pass by running test command
 
 ### Create Schemas
 
@@ -71,11 +71,11 @@ This exercise will have you creating routes and sub routers for our soon the be 
 
 In this exercise, you'll be taking what you learned about Mongoose and MongoDb to create a schema and model for the Item resource.
 
-- [ ] create a schema for the item resource
-- [ ] add the correct fields (look at test)
-- [ ] add the correct validations (look at test)
-- [ ] _extra_ add compund index to ensure all tasks in a list have unique names
-- [ ] ensure all tests pass by running test command
+- [x] create a schema for the item resource
+- [x] add the correct fields (look at test)
+- [x] add the correct validations (look at test)
+- [x] _extra_ add compund index to ensure all tasks in a list have unique names
+- [x] ensure all tests pass by running test command
 
 ### Controllers
 
